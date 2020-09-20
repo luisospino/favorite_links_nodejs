@@ -49,7 +49,7 @@ passport.serializeUser((user, done) => {//user.id se envía al deserializer
 });
 
 passport.deserializeUser(async (id, done) => {
-    const rows = await db.query('SELECT * FROM USERS WHERE id = ?', [id]);
+    const rows = await db.query('SELECT * FROM users WHERE id = ?', [id]);
     return done(null, rows[0]);//Único elemento del arreglo [0]
 });
 
